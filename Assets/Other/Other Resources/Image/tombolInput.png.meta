@@ -1,9 +1,21 @@
 fileFormatVersion: 2
 guid: 4ee05782f0b72da4094e3f9b526e1a32
-timeCreated: 1471101605
+timeCreated: 1471348523
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: tombolInput_0
+    21300002: tombolInput_1
+    21300004: tombolInput_2
+    21300006: tombolInput_3
+    21300008: tombolInput_4
+    21300010: tombolInput_5
+    21300012: tombolInput_6
+    21300014: tombolInput_7
+    21300016: tombolInput_8
+    21300018: tombolInput_9
+    21300020: tombolInput_10
+    21300022: tombolInput_11
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,7 +50,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +61,187 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: tombolInput_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 386
+        width: 122
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 62}
+        - {x: -61, y: -62}
+        - {x: 61, y: -62}
+        - {x: 61, y: 62}
+    - name: tombolInput_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 386
+        width: 122
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 62}
+        - {x: -61, y: -62}
+        - {x: 61, y: -62}
+        - {x: 61, y: 62}
+    - name: tombolInput_2
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 386
+        width: 122
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 62}
+        - {x: -61, y: -62}
+        - {x: 61, y: -62}
+        - {x: 61, y: 62}
+    - name: tombolInput_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 258
+        width: 122
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 62}
+        - {x: -61, y: -62}
+        - {x: 61, y: -62}
+        - {x: 61, y: 62}
+    - name: tombolInput_4
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 258
+        width: 122
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 62}
+        - {x: -61, y: -62}
+        - {x: 61, y: -62}
+        - {x: 61, y: 62}
+    - name: tombolInput_5
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 258
+        width: 122
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 62}
+        - {x: -61, y: -62}
+        - {x: 61, y: -62}
+        - {x: 61, y: 62}
+    - name: tombolInput_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 129
+        width: 122
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 62}
+        - {x: -61, y: -62}
+        - {x: 61, y: -62}
+        - {x: 61, y: 62}
+    - name: tombolInput_7
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 129
+        width: 122
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 62}
+        - {x: -61, y: -62}
+        - {x: 61, y: -62}
+        - {x: 61, y: 62}
+    - name: tombolInput_8
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 129
+        width: 122
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 62}
+        - {x: -61, y: -62}
+        - {x: 61, y: -62}
+        - {x: 61, y: 62}
+    - name: tombolInput_9
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1
+        width: 122
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 62}
+        - {x: -61, y: -62}
+        - {x: 61, y: -62}
+        - {x: 61, y: 62}
+    - name: tombolInput_10
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 1
+        width: 122
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 62}
+        - {x: -61, y: -62}
+        - {x: 61, y: -62}
+        - {x: 61, y: 62}
+    - name: tombolInput_11
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1
+        width: 122
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 62}
+        - {x: -61, y: -62}
+        - {x: 61, y: -62}
+        - {x: 61, y: 62}
     outline: []
   spritePackingTag: 
   userData: 
