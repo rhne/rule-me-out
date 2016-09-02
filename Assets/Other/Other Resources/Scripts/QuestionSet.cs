@@ -3,13 +3,14 @@ using System.Collections;
 using System;
 
 public class QuestionSet : MonoBehaviour {
-	int questionLength = 12;
-	int selectedQuestion;
-	System.Random rnd;
+	static int questionLength = 12;
+	static int selectedQuestion;
+	static System.Random rnd;
 
 	// Use this for initialization
 	void Start () {
 		rnd = new System.Random ();
+		SpinQuestionWheel ();
 	}
 	
 	// Update is called once per frame
@@ -21,7 +22,7 @@ public class QuestionSet : MonoBehaviour {
 		selectedQuestion = rnd.Next (questionLength);
 	}
 
-	public int GetAnswer(int a, int b) {
+	public static int GetAnswer(int a, int b) {
 		int result = -666;
 		switch(selectedQuestion) {
 		case 1:

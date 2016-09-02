@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ public class NumpadScript : MonoBehaviour {
 	public GameObject AngkaA, AngkaB;
 	GameObject currentAngka;
 	bool _switch;
+	int attempt = 10;
 
 	string display = "";
 
@@ -29,7 +31,17 @@ public class NumpadScript : MonoBehaviour {
 	}
 
 	public void EnterOnClick() {
-
+		//input: A and B
+		//get result from question
+		//concatenate into string
+		//update text
+		if (attempt > 0) {
+			int A = getTextToInt (AngkaA);
+			int B = getTextToInt (AngkaB);
+			String result = A + "\t" + B.ToString () + "\t" + QuestionSet.GetAnswer (A, B);
+			Debug.Log (result);
+			attempt--;
+		}
 	}
 
 	public void SignOnClick() {
@@ -47,5 +59,10 @@ public class NumpadScript : MonoBehaviour {
 	void updateText(string newText) {
 		Text angka = currentAngka.GetComponent<Text> ();
 		angka.text = newText;
+	}
+
+	int getTextToInt(GameObject gameObject) {
+		Text text = gameObject.GetComponent<Text> ();
+		return Int32.Parse (text.text);
 	}
 }
