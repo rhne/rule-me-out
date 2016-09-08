@@ -13,11 +13,17 @@ public class ChallengeController : MonoBehaviour {
 		get {
 			return _challengeA;
 		}
+		set {
+			_challengeA = value;
+		}
 	}
 
 	public int ChallengeB {
 		get {
 			return _challengeB;
+		}
+		set {
+			_challengeB = value;
 		}
 	}
 
@@ -25,19 +31,19 @@ public class ChallengeController : MonoBehaviour {
 	void Start () {
 		// Here be Test Case
 		// TODO: load from DB or somewhere else
-		rule = Largest;
+		rule = QuestionSet.sum;
 		_challengeA = 5;
 		_challengeB = 3;
 
-		Debug.Assert(CheckAnswer(5)); // Largest of 5 and 3 is 5
-		Debug.Assert(AskQuestion(19, 2) == 19);
-		Debug.Assert(AskQuestion(3, 5) == 5); // Inverted challenge should be okay.
+		//Debug.Assert(CheckAnswer(5)); // Largest of 5 and 3 is 5
+		//Debug.Assert(AskQuestion(19, 2) == 19);
+		//Debug.Assert(AskQuestion(3, 5) == 5); // Inverted challenge should be okay.
 
 		// challenge should NOT be okay.
 		try
 		{
-			Debug.Assert(AskQuestion(5,3) == 5); // Should throw exception
-			Debug.Assert(false); // Shouldn't happen, as above should give exception
+			//Debug.Assert(AskQuestion(5,3) == 5); // Should throw exception
+			//Debug.Assert(false); // Shouldn't happen, as above should give exception
 		}
 		catch (ArgumentException e)
 		{

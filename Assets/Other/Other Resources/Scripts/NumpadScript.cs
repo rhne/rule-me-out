@@ -8,7 +8,6 @@ public class NumpadScript : MonoBehaviour {
 	public GameObject AngkaA, AngkaB;
 	GameObject currentAngka;
 	bool _switch;
-	int attempt = 10;
 
 	string display = "";
 
@@ -26,22 +25,30 @@ public class NumpadScript : MonoBehaviour {
 		} else if(display.Length<3) {
 			display = display + button.name;
 		}
-		Debug.Log (display.Length);
 		updateText (display);
 	}
 
 	public void EnterOnClick() {
 		//input: A and B
-		//get result from question
+		//get result from question: to diffscript
 		//concatenate into string
 		//update text
-		if (attempt > 0) {
-			int A = getTextToInt (AngkaA);
-			int B = getTextToInt (AngkaB);
-			String result = A + "\t" + B.ToString () + "\t" + QuestionSet.GetAnswer (A, B);
-			Debug.Log (result);
-			attempt--;
-		}
+
+		//just make sure we have nice working existing int a and b
+		//attempt constraint isn't also going to be processed here.
+		//TODO: update more exception handlings here
+		int A = getTextToInt (AngkaA);
+		int B = getTextToInt (AngkaB);
+
+
+		//instead of going straight to challenger, go to attempt history
+		//please fix this
+		int askQuestion = GameObject.Find ("Manager").GetComponent<AttemptHistory> ().AskQuestion(A,B);
+
+		//for debugging sake only
+		String result = A + "\t" + B.ToString () + "\t" + askQuestion;
+		Debug.Log (result);
+		//
 	}
 
 	public void SignOnClick() {
@@ -63,6 +70,6 @@ public class NumpadScript : MonoBehaviour {
 
 	int getTextToInt(GameObject gameObject) {
 		Text text = gameObject.GetComponent<Text> ();
-		return Int32.Parse (text.text);
+		return int.Parse (text.text);
 	}
 }
