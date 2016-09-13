@@ -1,0 +1,326 @@
+fileFormatVersion: 2
+guid: 24f2a2b10408cba4b9e9e04aa689e7cc
+timeCreated: 1473740736
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Survival Mode Menu ButtonSet_0
+    21300002: Survival Mode Menu ButtonSet_1
+    21300004: Survival Mode Menu ButtonSet_2
+    21300006: Survival Mode Menu ButtonSet_3
+    21300008: Survival Mode Menu ButtonSet_4
+    21300010: Survival Mode Menu ButtonSet_5
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Survival Mode Menu ButtonSet_0
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 969
+        width: 402
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 201, y: -9}
+        - {x: 201, y: 15}
+        - {x: 180, y: 54}
+        - {x: 143, y: 78}
+        - {x: 80, y: 111}
+        - {x: 19, y: 128}
+        - {x: -12, y: 128}
+        - {x: -28, y: 113}
+        - {x: -86, y: 111}
+        - {x: -107, y: 85}
+        - {x: -156, y: 71}
+        - {x: -201, y: 14}
+        - {x: -201, y: -8}
+        - {x: -173, y: -47}
+        - {x: -149, y: -67}
+        - {x: -108, y: -81}
+        - {x: -83, y: -107}
+        - {x: -16, y: -117}
+        - {x: -3, y: -125}
+        - {x: 16, y: -125}
+        - {x: 84, y: -105}
+        - {x: 110, y: -84}
+        - {x: 161, y: -63}
+      - - {x: -192, y: -110}
+        - {x: -194, y: -113}
+        - {x: -194, y: -117}
+        - {x: -190, y: -120}
+        - {x: -183, y: -120}
+        - {x: -182, y: -118}
+        - {x: -182, y: -114}
+        - {x: -187, y: -110}
+      - - {x: 191, y: -108}
+        - {x: 178, y: -108}
+        - {x: 174, y: -112}
+        - {x: 174, y: -119}
+        - {x: 178, y: -120}
+        - {x: 186, y: -120}
+        - {x: 192, y: -114}
+        - {x: 192, y: -110}
+      - - {x: -184, y: -108}
+        - {x: -186, y: -110}
+        - {x: -186, y: -114}
+        - {x: -176, y: -114}
+        - {x: -176, y: -110}
+        - {x: -178, y: -108}
+    - name: Survival Mode Menu ButtonSet_1
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 753
+        width: 375
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 148.5, y: -85}
+        - {x: 170.5, y: -63}
+        - {x: 187.5, y: -35}
+        - {x: 187.5, y: 36}
+        - {x: 167.5, y: 68}
+        - {x: 132.5, y: 90}
+        - {x: 94.5, y: 91}
+        - {x: 16.5, y: 82}
+        - {x: 7.5, y: 93}
+        - {x: -5.5, y: 93}
+        - {x: -24.5, y: 82}
+        - {x: -113.5, y: 93}
+        - {x: -131.5, y: 93}
+        - {x: -177.5, y: 61}
+        - {x: -187.5, y: 32}
+        - {x: -187.5, y: -35}
+        - {x: -169.5, y: -65}
+        - {x: -146.5, y: -84}
+        - {x: -114.5, y: -93}
+        - {x: -113.5, y: -93}
+        - {x: -90.5, y: -90}
+        - {x: -30.5, y: -81}
+        - {x: -5.5, y: -93}
+        - {x: 10.5, y: -93}
+        - {x: 36.5, y: -81}
+        - {x: 102.5, y: -93}
+        - {x: 120.5, y: -93}
+    - name: Survival Mode Menu ButtonSet_2
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 546
+        width: 375
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 148.5, y: -85}
+        - {x: 170.5, y: -63}
+        - {x: 187.5, y: -35}
+        - {x: 187.5, y: 36}
+        - {x: 167.5, y: 68}
+        - {x: 132.5, y: 90}
+        - {x: 94.5, y: 91}
+        - {x: 16.5, y: 82}
+        - {x: 7.5, y: 93}
+        - {x: -5.5, y: 93}
+        - {x: -24.5, y: 82}
+        - {x: -113.5, y: 93}
+        - {x: -131.5, y: 93}
+        - {x: -177.5, y: 61}
+        - {x: -187.5, y: 32}
+        - {x: -187.5, y: -35}
+        - {x: -169.5, y: -65}
+        - {x: -146.5, y: -84}
+        - {x: -114.5, y: -93}
+        - {x: -113.5, y: -93}
+        - {x: -90.5, y: -90}
+        - {x: -30.5, y: -81}
+        - {x: -5.5, y: -93}
+        - {x: 10.5, y: -93}
+        - {x: 36.5, y: -81}
+        - {x: 102.5, y: -93}
+        - {x: 120.5, y: -93}
+    - name: Survival Mode Menu ButtonSet_3
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 334
+        width: 375
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 148.5, y: -85}
+        - {x: 170.5, y: -63}
+        - {x: 187.5, y: -35}
+        - {x: 187.5, y: 36}
+        - {x: 167.5, y: 68}
+        - {x: 132.5, y: 90}
+        - {x: 94.5, y: 91}
+        - {x: 16.5, y: 82}
+        - {x: 7.5, y: 93}
+        - {x: -5.5, y: 93}
+        - {x: -24.5, y: 82}
+        - {x: -113.5, y: 93}
+        - {x: -131.5, y: 93}
+        - {x: -177.5, y: 61}
+        - {x: -187.5, y: 32}
+        - {x: -187.5, y: -35}
+        - {x: -169.5, y: -65}
+        - {x: -146.5, y: -84}
+        - {x: -114.5, y: -93}
+        - {x: -113.5, y: -93}
+        - {x: -90.5, y: -90}
+        - {x: -30.5, y: -81}
+        - {x: -5.5, y: -93}
+        - {x: 10.5, y: -93}
+        - {x: 36.5, y: -81}
+        - {x: 102.5, y: -93}
+        - {x: 120.5, y: -93}
+    - name: Survival Mode Menu ButtonSet_4
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 130
+        width: 387
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 150.5, y: -86.5}
+        - {x: 171.5, y: -64.5}
+        - {x: 191.5, y: -31.5}
+        - {x: 191.5, y: 32.5}
+        - {x: 186.5, y: 50.5}
+        - {x: 136.5, y: 91.5}
+        - {x: 127.5, y: 91.5}
+        - {x: 96.5, y: 89.5}
+        - {x: 18.5, y: 80.5}
+        - {x: 9.5, y: 91.5}
+        - {x: -4.5, y: 91.5}
+        - {x: -22.5, y: 83.5}
+        - {x: -103.5, y: 91.5}
+        - {x: -130.5, y: 91.5}
+        - {x: -173.5, y: 57.5}
+        - {x: -187.5, y: 28.5}
+        - {x: -187.5, y: -32.5}
+        - {x: -181.5, y: -51.5}
+        - {x: -145.5, y: -86.5}
+        - {x: -124.5, y: -91.5}
+        - {x: -92.5, y: -91.5}
+        - {x: -47.5, y: -85.5}
+        - {x: -24.5, y: -91.5}
+        - {x: 10.5, y: -91.5}
+        - {x: 37.5, y: -81.5}
+        - {x: 76.5, y: -89.5}
+        - {x: 90.5, y: -91.5}
+        - {x: 130.5, y: -91.5}
+      - - {x: 181.5, y: -90.5}
+        - {x: 181.5, y: -91.5}
+        - {x: 193.5, y: -91.5}
+        - {x: 193.5, y: -79.5}
+        - {x: 192.5, y: -79.5}
+    - name: Survival Mode Menu ButtonSet_5
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 16
+        width: 188
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -89, y: -84}
+        - {x: -90, y: -86}
+        - {x: -90, y: -90}
+        - {x: -88, y: -91}
+        - {x: -84, y: -91}
+        - {x: -84, y: -86}
+        - {x: -86, y: -84}
+      - - {x: 72, y: 78}
+        - {x: 59, y: 91}
+        - {x: -48, y: 91}
+        - {x: -94, y: 59}
+        - {x: -94, y: -53}
+        - {x: -77, y: -79}
+        - {x: -22, y: -91}
+        - {x: 26, y: -91}
+        - {x: 73, y: -53}
+        - {x: 93, y: -31}
+        - {x: 93, y: 25}
+      - - {x: -86, y: -80}
+        - {x: -86, y: -83}
+        - {x: -85, y: -85}
+        - {x: -83, y: -85}
+        - {x: -80, y: -82}
+        - {x: -81, y: -79}
+        - {x: -84, y: -79}
+      - - {x: 67, y: 38}
+        - {x: 69, y: 35}
+        - {x: 73, y: 36}
+        - {x: 76, y: 39}
+        - {x: 75, y: 42}
+        - {x: 72, y: 42}
+      - - {x: -70, y: 91}
+        - {x: -94, y: 91}
+        - {x: -94, y: 52}
+        - {x: -90, y: 52}
+        - {x: -81, y: 64}
+        - {x: -71, y: 82}
+        - {x: -70, y: 86}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
