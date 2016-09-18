@@ -23,7 +23,9 @@ public class AttemptHistory : MonoBehaviour {
 	//jadi kerjaan fetching list container nya itu... dipikirin.
 
 	/*
-	 * problem is, the prefab isn't populating.
+	 * problem is, the prefab isn't populating.[SOLVED]
+	 * 
+	 * where should we create new question?
 	 */
 
 	//has function to check for combination a and b to be unique
@@ -77,6 +79,7 @@ public class AttemptHistory : MonoBehaviour {
 	public bool isAttempted(int a, int b) {
 		Init ();
 
+		//coroutine
 		foreach (var item in historyAttempt) {
 			if (item [0] == a && item [1] == b)
 				return true;

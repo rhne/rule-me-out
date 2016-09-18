@@ -1,10 +1,24 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using System;
 
 public class ChallengeController : MonoBehaviour {
+	
 
 	delegate int Rule(int x, int y);
+	List<Rule> questionList = new List<Rule> () {
+		QuestionSet.Sum,
+		QuestionSet.SumOfDigit,
+		QuestionSet.Smallest,
+		QuestionSet.ModofSum,
+		QuestionSet.AbsSubstraction,
+		QuestionSet.Multiply,
+		QuestionSet.AModB,
+		QuestionSet.BModA,
+		QuestionSet.Largest,
+		QuestionSet.AIsLarger,
+		QuestionSet.BIsLarger
+	};
 
 	private Rule rule;
 	private int _challengeA, _challengeB;
@@ -31,7 +45,8 @@ public class ChallengeController : MonoBehaviour {
 	void Start () {
 		// Here be Test Case
 		// TODO: load from DB or somewhere else
-		rule = QuestionSet.sum;
+
+		rule = questionList[4];
 		_challengeA = 5;
 		_challengeB = 3;
 
@@ -72,13 +87,4 @@ public class ChallengeController : MonoBehaviour {
 		return (rule(ChallengeA, ChallengeB) == answer);
 	}
 
-	#region ChallengeQuestions
-	private int Largest(int x, int y) {
-		return Mathf.Max(x,y);
-	}
-
-	private int Smallest(int x, int y) {
-		return Mathf.Min(x,y);
-	}
-	#endregion
 }

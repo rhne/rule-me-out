@@ -22,67 +22,61 @@ public class QuestionSet : MonoBehaviour {
 		selectedQuestion = rnd.Next (questionLength);
 	}
 
-	public static int GetAnswer(int a, int b) {
-		int result = -666;
-		switch(selectedQuestion) {
-		case 1:
-			result = a + b;
-			break;
-		case 2: //sum of digits
-			result = a;
-			break;
-		case 3:
-			result = Mathf.Abs (a - b);
-			break;
-		case 4:
-			result = a * b;
-			break;
-		case 5: //a/b
-			result = b;
-			break;
-		case 6:
-			result = a % b;
-			break;
-		case 7:
-			result = b % a;
-			break;
-		case 8:
-			result = (a + b) % 2;
-			break;
-		case 9:
-			if (a > b)
-				result = a;
-			else 
-				result = b;
-			break;
-		case 10:
-			if (a < b)
-				result = a;
-			else 
-				result = b;
-			break;
-		case 11:
-			if (a > b)
-				result = 1;
-			else
-				result = 0;
-			break;
-		case 12:
-			if (a < b)
-				result = 1;
-			else
-				result = 0;
-			break;
-		};
-		return result;
+	private static int SumOfDigit (int x) {
+		int sum = 0;
+		while (x != 0) {
+			sum += x % 10;
+			x /= 10;
+		}
+
+		return sum;
 	}
 
-	public static int sum (int a, int b) {
+	public static int Sum (int a, int b) {
 		return a + b;
 	}
 
-	public static int multiply (int a, int b ) {
+	public static int SumOfDigit (int a, int b) {
+		return SumOfDigit(a) + SumOfDigit(b);
+	}
+
+	public static int Multiply (int a, int b ) {
 		return a * b;
 	}
 
+	public static int AbsSubstraction (int a, int b) {
+		return Math.Abs (a - b);
+	}
+		
+	public static int AModB (int a, int b) {
+		return a % b;
+	}
+
+	public static int BModA (int a, int b) {
+		return b % a;
+	}
+
+	public static int ModofSum (int a, int b) {
+		return (a + b) % 2;
+	}
+
+	public static int Largest (int a, int b) {
+		return Mathf.Max (a, b);
+	}
+
+	public static int Smallest (int a, int b) {
+		return Mathf.Min (a, b);
+	}
+
+	public static int AIsLarger (int a, int b) {
+		if (a > b)
+			return 1;
+		return 0;
+	}
+
+	public static int BIsLarger (int a, int b) {
+		if (b > a)
+			return 1;
+		return 0;
+	}
 }
