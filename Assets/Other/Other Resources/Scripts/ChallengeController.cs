@@ -75,11 +75,11 @@ public class ChallengeController : MonoBehaviour {
 
 	// Give answer only if it's not the challenge
 	public int AskQuestion (int x, int y) {
-		if (x != ChallengeA && y != ChallengeB) {
-			return rule(x,y);
+		if (x == ChallengeA && y == ChallengeB) {
+			throw new ArgumentException("That is the question, don't ask me!");
 		}
 		else {
-			throw new ArgumentException("That is the question, don't ask me!");
+			return rule(x,y);
 		}
 	}
 

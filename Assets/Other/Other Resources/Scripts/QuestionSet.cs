@@ -3,14 +3,10 @@ using System.Collections;
 using System;
 
 public class QuestionSet : MonoBehaviour {
-	static int questionLength = 12;
-	static int selectedQuestion;
-	static System.Random rnd;
 
 	// Use this for initialization
 	void Start () {
-		rnd = new System.Random ();
-		SpinQuestionWheel ();
+		ChallengeGenerator ();
 	}
 	
 	// Update is called once per frame
@@ -18,8 +14,17 @@ public class QuestionSet : MonoBehaviour {
 		
 	}
 
-	void SpinQuestionWheel() {
-		selectedQuestion = rnd.Next (questionLength);
+	void ChallengeGenerator() {
+		//this.GetComponent<GetComponent<ChallengeController> ().ChallengeA = Random.Range (0, 20);
+		int number = UnityEngine.Random.Range (0, 20);
+		GameObject.Find ("Manager").GetComponent<ChallengeController> ().ChallengeA = number;
+		GameObject.Find ("AngkaA").GetComponent<NumpadScript> ().updateAngkaA(number.ToString());
+
+		number = UnityEngine.Random.Range (0, 20);
+		GameObject.Find ("Manager").GetComponent<ChallengeController> ().ChallengeB = number;
+		GameObject.Find ("AngkaA").GetComponent<NumpadScript> ().updateAngkaB(number.ToString());
+
+
 	}
 
 	private static int SumOfDigit (int x) {

@@ -21,11 +21,16 @@ public class AttemptHistory : MonoBehaviour {
 	//things needed to be fixed
 	//this thing harus banget taru di manager, karna ini middlewarenya kan ya.
 	//jadi kerjaan fetching list container nya itu... dipikirin.
+	//FIXED
 
 	/*
 	 * problem is, the prefab isn't populating.[SOLVED]
 	 * 
 	 * where should we create new question?
+	 * it'll get created every starting, right?
+	 * but this is survival mode........ so we have to count things right....
+	 * 
+	 * hmm
 	 */
 
 	//has function to check for combination a and b to be unique

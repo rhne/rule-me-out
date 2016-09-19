@@ -68,6 +68,16 @@ public class NumpadScript : MonoBehaviour {
 		angka.text = newText;
 	}
 
+	public void updateAngkaA(string newText) {
+		Text angka = AngkaA.GetComponent<Text> ();
+		angka.text = newText;
+	}
+
+	public void updateAngkaB(string newText) {
+		Text angka = AngkaB.GetComponent<Text> ();
+		angka.text = newText;
+	}
+
 	int getTextToInt(GameObject gameObject) {
 		Text text = gameObject.GetComponent<Text> ();
 		return int.Parse (text.text);

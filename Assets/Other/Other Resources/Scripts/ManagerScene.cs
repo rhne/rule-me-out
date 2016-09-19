@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class SceneManager : MonoBehaviour {
+public class ManagerScene: MonoBehaviour {
 	[Header("Scene List")]
 	[SerializeField] Object mainMenuScene;
 	[SerializeField] Object SurvivalModeScene;
@@ -13,14 +13,16 @@ public class SceneManager : MonoBehaviour {
 
 	static bool exist = false;
 
-	void Awake(){
-		if (!exist) {
-			DontDestroyOnLoad (this.gameObject);
-			exist = true;
-		} else {
-			Destroy (this.gameObject);
-		}
-	}
+	public static int n=0;
+
+	//void Awake(){
+	//	if (!exist) {
+	//		DontDestroyOnLoad (this.gameObject);
+	//		exist = true;
+	//	} else {
+	//		Destroy (this.gameObject);
+	//	}
+	//}
 
 	// Use this for initialization
 	void Start () {
@@ -33,20 +35,21 @@ public class SceneManager : MonoBehaviour {
 	}
 
 	public void LoadSurvivalMode() {
-		Application.LoadLevel (SurvivalModeScene.name);
+		SceneManager.LoadScene (SurvivalModeScene.name);
 		//SceneManager.LoadScene(SurvivalModeScene.name);
 	}
 
 	public void LoadBaghdadOP() {
-		Application.LoadLevel (Baghdad[0].name);
+		SceneManager.LoadScene (Baghdad[0].name);
 	}
 
 	public void LoadBaghdadStoryScene() {
-		Application.LoadLevel (Baghdad [1].name);
+		SceneManager.LoadScene (Baghdad [1].name);
 	}
 
 	public void LoadBaghdadPlay() {
-		Application.LoadLevel (Baghdad [2].name);
+		SceneManager.LoadScene (Baghdad [2].name);
 	}
+
 
 }

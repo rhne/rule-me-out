@@ -7,17 +7,7 @@ public class HistoryList : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Append ();
-		Append ();
-		Append ();
-		Append ();
-		Append ();
-
-		Append ();
-		Append ();
-		Append ();
-		Append ();
-		Append ();
+		
 	}
 	
 	// Update is called once per frame
