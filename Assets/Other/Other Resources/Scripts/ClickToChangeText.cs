@@ -7,8 +7,6 @@ public class ClickToChangeText : MonoBehaviour {
 	[SerializeField] Text[] textList;
 	int activatedObj = 0;
 
-	[SerializeField] Object nextScene;
-
 	void Start () {
 		foreach (Text list in textList) {
 			list.gameObject.SetActive (false);
@@ -29,7 +27,7 @@ public class ClickToChangeText : MonoBehaviour {
 			} else {
 				//go to new scene...?
 				//Debug.Log ("Text abis");
-				Application.LoadLevel(nextScene.name);
+				Application.LoadLevel(4);
 			}
 		}
 	}

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class NumpadScript : MonoBehaviour {
 	//variables for box 1 and box 2
-	public GameObject AngkaA, AngkaB;
+	public GameObject AngkaA, AngkaB, Answer;
 	GameObject currentAngka;
 	bool _switch;
 
@@ -26,6 +26,10 @@ public class NumpadScript : MonoBehaviour {
 			display = display + button.name;
 		}
 		updateText (display);
+	}
+
+	public void AnswerInput(GameObject button) {
+
 	}
 
 	public void EnterOnClick() {
@@ -76,6 +80,28 @@ public class NumpadScript : MonoBehaviour {
 	public void updateAngkaB(string newText) {
 		Text angka = AngkaB.GetComponent<Text> ();
 		angka.text = newText;
+	}
+
+	public void updateAnswer(string newText) {
+		Text angka = Answer.GetComponent<Text> ();
+		angka.text += newText;
+	}
+
+	public void resetAnswer() {
+		Text angka = Answer.GetComponent<Text> ();
+		angka.text = "";
+	}
+
+	public void checkAnswer() {
+		Text angka = Answer.GetComponent<Text> ();
+		//get the fucking answer, and then check it to challenger. but we need to store the selected question
+		if (angka.text == PlayerPrefs.GetInt ("Real Answer").ToString()) {
+			Debug.Log ("Correct!");
+			angka.text = "Correct!";
+		} else {
+			Debug.Log ("Wrong Answer");
+			angka.text = "Wrong Answer";
+		}
 	}
 
 	int getTextToInt(GameObject gameObject) {

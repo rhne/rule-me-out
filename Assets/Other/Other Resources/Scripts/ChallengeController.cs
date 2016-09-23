@@ -46,9 +46,9 @@ public class ChallengeController : MonoBehaviour {
 		// Here be Test Case
 		// TODO: load from DB or somewhere else
 
-		rule = questionList[4];
-		_challengeA = 5;
-		_challengeB = 3;
+		//randomise the list
+		int selectedQuestion = UnityEngine.Random.Range(0,questionList.Count);
+		rule = questionList[selectedQuestion];
 
 		//Debug.Assert(CheckAnswer(5)); // Largest of 5 and 3 is 5
 		//Debug.Assert(AskQuestion(19, 2) == 19);
@@ -85,6 +85,11 @@ public class ChallengeController : MonoBehaviour {
 
 	public bool CheckAnswer(int answer) {
 		return (rule(ChallengeA, ChallengeB) == answer);
+	}
+
+	//called by answer button
+	public void SaveRealAnswer() {
+		PlayerPrefs.SetInt ("Real Answer", rule (ChallengeA, ChallengeB));
 	}
 
 }

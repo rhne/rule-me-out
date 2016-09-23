@@ -19,12 +19,12 @@ public class QuestionSet : MonoBehaviour {
 		int number = UnityEngine.Random.Range (0, 20);
 		GameObject.Find ("Manager").GetComponent<ChallengeController> ().ChallengeA = number;
 		GameObject.Find ("AngkaA").GetComponent<NumpadScript> ().updateAngkaA(number.ToString());
+		PlayerPrefs.SetInt ("ChallengeA", number);
 
 		number = UnityEngine.Random.Range (0, 20);
 		GameObject.Find ("Manager").GetComponent<ChallengeController> ().ChallengeB = number;
 		GameObject.Find ("AngkaA").GetComponent<NumpadScript> ().updateAngkaB(number.ToString());
-
-
+		PlayerPrefs.SetInt ("ChallengeB", number);
 	}
 
 	private static int SumOfDigit (int x) {

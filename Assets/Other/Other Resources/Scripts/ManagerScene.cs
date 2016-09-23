@@ -3,17 +3,6 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class ManagerScene: MonoBehaviour {
-	[Header("Scene List")]
-	[SerializeField] Object mainMenuScene;
-	[SerializeField] Object SurvivalModeScene;
-
-	[Header("Story Mode Scenes")]
-	[SerializeField] Object[] Baghdad;
-	[SerializeField] Object[] LevelScene; //urut 1-3
-
-	static bool exist = false;
-
-	public static int n=0;
 
 	//void Awake(){
 	//	if (!exist) {
@@ -35,20 +24,25 @@ public class ManagerScene: MonoBehaviour {
 	}
 
 	public void LoadSurvivalMode() {
-		SceneManager.LoadScene (SurvivalModeScene.name);
+		SceneManager.LoadScene (1);
 		//SceneManager.LoadScene(SurvivalModeScene.name);
 	}
 
 	public void LoadBaghdadOP() {
-		SceneManager.LoadScene (Baghdad[0].name);
+		SceneManager.LoadScene (2);
 	}
 
 	public void LoadBaghdadStoryScene() {
-		SceneManager.LoadScene (Baghdad [1].name);
+		SceneManager.LoadScene (3);
 	}
 
 	public void LoadBaghdadPlay() {
-		SceneManager.LoadScene (Baghdad [2].name);
+		SceneManager.LoadScene (4);
+	}
+
+	public void LoadBaghdadAnswer() {
+		GameObject.Find ("Manager").GetComponent<ChallengeController> ().SaveRealAnswer();
+		SceneManager.LoadScene (5);
 	}
 
 
