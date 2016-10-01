@@ -4,6 +4,7 @@ using System.Collections;
 
 public class ClickToChangeText : MonoBehaviour {
 
+	[SerializeField] int targetSceneNumber;
 	[SerializeField] Text[] textList;
 	int activatedObj = 0;
 
@@ -27,7 +28,12 @@ public class ClickToChangeText : MonoBehaviour {
 			} else {
 				//go to new scene...?
 				//Debug.Log ("Text abis");
-				Application.LoadLevel(4);
+				Application.LoadLevel(targetSceneNumber);
+				if (targetSceneNumber == 0) {
+					GameObject.Find ("GameControl").GetComponent<GameControl> ().ResetScore();
+					//GameObject.Find ("GameControl").GetComponent<GameControl> ().WriteToXML();
+					GameObject.Find ("GameControl").GetComponent<GameControl> ().WriteJSON();
+				}
 			}
 		}
 	}

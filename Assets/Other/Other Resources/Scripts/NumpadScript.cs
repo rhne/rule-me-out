@@ -2,12 +2,13 @@
 using System;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NumpadScript : MonoBehaviour {
 	//variables for box 1 and box 2
 	public GameObject AngkaA, AngkaB, Answer;
 	GameObject currentAngka;
-	bool _switch;
+	bool _switch, _nextStageClickable, _answerStatus;
 
 	string display = "";
 
@@ -15,6 +16,7 @@ public class NumpadScript : MonoBehaviour {
 		currentAngka = AngkaA;
 		currentAngka.GetComponent<Text>().color = Color.yellow;
 		_switch = true;
+		_nextStageClickable = false;
 	}
 
 	//function for numpad button on click
@@ -44,10 +46,15 @@ public class NumpadScript : MonoBehaviour {
 		int A = getTextToInt (AngkaA);
 		int B = getTextToInt (AngkaB);
 
+		//if isAttempted, change colors into red
+		if (GameObject.Find ("Manager").GetComponent<AttemptHistory> ().isAttempted (A, B)) {
+			AngkaA.GetComponent<Text> ().color = Color.red;
+			AngkaB.GetComponent<Text> ().color = Color.red;
+		}
 
-		//instead of going straight to challenger, go to attempt history
-		//please fix this
 		int askQuestion = GameObject.Find ("Manager").GetComponent<AttemptHistory> ().AskQuestion(A,B);
+
+
 
 		//for debugging sake only
 		String result = A + "\t" + B.ToString () + "\t" + askQuestion;
@@ -94,14 +101,35 @@ public class NumpadScript : MonoBehaviour {
 
 	public void checkAnswer() {
 		Text angka = Answer.GetComponent<Text> ();
-		//get the fucking answer, and then check it to challenger. but we need to store the selected question
+		//get the answer, and then check it to challenger. but we need to store the selected question
 		if (angka.text == PlayerPrefs.GetInt ("Real Answer").ToString()) {
-			Debug.Log ("Correct!");
 			angka.text = "Correct!";
+			_answerStatus = true;
+			GameObject gameControl = GameObject.Find ("GameControl");
+			gameControl.GetComponent<GameControl> ().AddScore (1);
+			gameControl.GetComponent<GameControl>().UpdateQuestionsCorrectCount(PlayerPrefs.GetInt("CurrentQuestionIndex"));
+
+
 		} else {
-			Debug.Log ("Wrong Answer");
 			angka.text = "Wrong Answer";
+			_answerStatus = false;
+			
 		}
+
+		//change answer text to "click me to continue"
+		//and then make the person clickable. there'll be a kind of activation parameter in the script somewhere.
+		Text clickMeText = GameObject.Find("Click me text").GetComponent<Text> ();
+		clickMeText.text = "Click Me to Continue";
+		_nextStageClickable = true;
+		GameObject.Find ("GameControl").GetComponent<GameControl> ().PlayCountIncrement();
+	}
+
+	public bool IsToNextStageEnabled() {
+		return _nextStageClickable;
+	}
+
+	public bool IsRightAnswer() {
+		return _answerStatus;
 	}
 
 	int getTextToInt(GameObject gameObject) {

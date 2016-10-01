@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		Camera.main.aspect = 720f / 1280f;
 		int ratio = Screen.height / 1280;
-		Screen.SetResolution ( 405, 720, false);
+		//Screen.SetResolution ( 405, 720, false);
 	}
 	
 	// Update is called once per frame

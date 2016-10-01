@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System;
+using System.Diagnostics;
 
 public class ChallengeController : MonoBehaviour {
 	
@@ -43,16 +44,10 @@ public class ChallengeController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		// Here be Test Case
-		// TODO: load from DB or somewhere else
-
 		//randomise the list
 		int selectedQuestion = UnityEngine.Random.Range(0,questionList.Count);
 		rule = questionList[selectedQuestion];
-
-		//Debug.Assert(CheckAnswer(5)); // Largest of 5 and 3 is 5
-		//Debug.Assert(AskQuestion(19, 2) == 19);
-		//Debug.Assert(AskQuestion(3, 5) == 5); // Inverted challenge should be okay.
+		PlayerPrefs.SetInt ("CurrentQuestionIndex", selectedQuestion);
 
 		// challenge should NOT be okay.
 		try

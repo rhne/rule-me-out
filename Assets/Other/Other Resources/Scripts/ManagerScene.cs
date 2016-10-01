@@ -23,6 +23,10 @@ public class ManagerScene: MonoBehaviour {
 	
 	}
 
+	public void LoadMainMenu() {
+		SceneManager.LoadScene (0);
+	}
+
 	public void LoadSurvivalMode() {
 		SceneManager.LoadScene (1);
 		//SceneManager.LoadScene(SurvivalModeScene.name);
@@ -43,6 +47,19 @@ public class ManagerScene: MonoBehaviour {
 	public void LoadBaghdadAnswer() {
 		GameObject.Find ("Manager").GetComponent<ChallengeController> ().SaveRealAnswer();
 		SceneManager.LoadScene (5);
+	}
+
+	public void BaghdadToNextStageAnswer() {
+		//check button cue from numpadscript... strange, i know
+		if (GameObject.Find ("AngkaA").GetComponent<NumpadScript> ().IsToNextStageEnabled ()) {
+			//check if answer is true or false
+			if (GameObject.Find ("AngkaA").GetComponent<NumpadScript> ().IsRightAnswer ()) {
+				SceneManager.LoadScene (7);
+			} else {
+				SceneManager.LoadScene (6);
+			}
+		}
+
 	}
 
 
