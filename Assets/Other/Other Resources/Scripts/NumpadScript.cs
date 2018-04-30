@@ -7,23 +7,30 @@ using UnityEngine.SceneManagement;
 public class NumpadScript : MonoBehaviour {
 	//variables for box 1 and box 2
 	public GameObject AngkaA, AngkaB, Answer;
-	GameObject currentAngka;
-	bool _switch, _nextStageClickable, _answerStatus;
+	public GameObject ErrMessage01; // ask player to input other combination
 
-	string display = "";
+	GameObject currentAngka;
+	private bool _switch, _isAnswerAlreadyGiven, _answerStatus;
+
+	string display;
 
 	void Start() {
+		display = "";
 		currentAngka = AngkaA;
 		currentAngka.GetComponent<Text>().color = Color.yellow;
 		_switch = true;
-		_nextStageClickable = false;
+		_isAnswerAlreadyGiven = false;
+
+		ErrMessage01.SetActive (false);
 	}
 
-	//function for numpad button on click
+	//function for numpad button on click during function trials
 	public void ButtonOnClick(GameObject button) {
 		if (_switch) {
 			display = button.name;
 			_switch = false;
+		} else if(display.Equals("0")) {
+			display = button.name;
 		} else if(display.Length<3) {
 			display = display + button.name;
 		}
@@ -48,8 +55,11 @@ public class NumpadScript : MonoBehaviour {
 
 		//if isAttempted, change colors into red
 		if (GameObject.Find ("Manager").GetComponent<AttemptHistory> ().isAttempted (A, B)) {
-			AngkaA.GetComponent<Text> ().color = Color.red;
-			AngkaB.GetComponent<Text> ().color = Color.red;
+			//AngkaA.GetComponent<Text> ().color = Color.red;
+			//AngkaB.GetComponent<Text> ().color = Color.red;
+			ErrMessage01.SetActive (true);
+		} else {
+			ErrMessage01.SetActive (false);
 		}
 
 		int askQuestion = GameObject.Find ("Manager").GetComponent<AttemptHistory> ().AskQuestion(A,B);
@@ -74,6 +84,30 @@ public class NumpadScript : MonoBehaviour {
 		currentAngka.GetComponent<Text>().color = Color.yellow;
 	}
 
+	public void AngkaAOnClick() {
+		//if selected is already angka A
+		if (currentAngka != AngkaA) {
+			_switch = true;
+			currentAngka.GetComponent<Text>().color = Color.white;
+			currentAngka = AngkaA;
+			currentAngka.GetComponent<Text>().color = Color.yellow;
+		}
+	}
+
+	public void AngkaBOnClick() {
+		if (currentAngka != AngkaB) {
+			_switch = true;
+			currentAngka.GetComponent<Text>().color = Color.white;
+			currentAngka = AngkaB;
+			currentAngka.GetComponent<Text>().color = Color.yellow;
+		}
+	}
+
+	public void DeleteOnClick() {
+		display = "0";
+		updateText (display);
+	}
+
 	void updateText(string newText) {
 		Text angka = currentAngka.GetComponent<Text> ();
 		angka.text = newText;
@@ -89,18 +123,32 @@ public class NumpadScript : MonoBehaviour {
 		angka.text = newText;
 	}
 
+	#region Answer Page
 	public void updateAnswer(string newText) {
+		if (_isAnswerAlreadyGiven)
+			return;
+
 		Text angka = Answer.GetComponent<Text> ();
 		angka.text += newText;
+		
 	}
 
 	public void resetAnswer() {
+		if (_isAnswerAlreadyGiven)
+			return;
+		
 		Text angka = Answer.GetComponent<Text> ();
 		angka.text = "";
 	}
 
 	public void checkAnswer() {
 		Text angka = Answer.GetComponent<Text> ();
+		if (angka.text.Equals ("") || _isAnswerAlreadyGiven) {
+			// input error, should contain something
+			// TODO: tambah popup error message ke player or smth
+			return;
+		}
+
 		//get the answer, and then check it to challenger. but we need to store the selected question
 		if (angka.text == PlayerPrefs.GetInt ("Real Answer").ToString()) {
 			angka.text = "Correct!";
@@ -120,20 +168,28 @@ public class NumpadScript : MonoBehaviour {
 		//and then make the person clickable. there'll be a kind of activation parameter in the script somewhere.
 		Text clickMeText = GameObject.Find("Click me text").GetComponent<Text> ();
 		clickMeText.text = "Click Me to Continue";
-		_nextStageClickable = true;
+		_isAnswerAlreadyGiven = true;
 		GameObject.Find ("GameControl").GetComponent<GameControl> ().PlayCountIncrement();
 	}
 
 	public bool IsToNextStageEnabled() {
-		return _nextStageClickable;
+		return _isAnswerAlreadyGiven;
 	}
 
 	public bool IsRightAnswer() {
 		return _answerStatus;
 	}
 
+	#endregion
+
 	int getTextToInt(GameObject gameObject) {
 		Text text = gameObject.GetComponent<Text> ();
-		return int.Parse (text.text);
+		int angka;
+		int.TryParse (text.text, out angka);
+		if (angka <= 0) {
+			angka = 0;
+			text.text = "0";
+		}
+		return angka;
 	}
 }

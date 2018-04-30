@@ -4,7 +4,8 @@ using System;
 using System.Diagnostics;
 
 public class ChallengeController : MonoBehaviour {
-	
+	[SerializeField] bool EnableRandomQuestion;
+	private int curQuestionIndex;
 
 	delegate int Rule(int x, int y);
 	List<Rule> questionList = new List<Rule> () {
@@ -45,7 +46,12 @@ public class ChallengeController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//randomise the list
-		int selectedQuestion = UnityEngine.Random.Range(0,questionList.Count);
+		int selectedQuestion;
+		if (EnableRandomQuestion) {
+			selectedQuestion = UnityEngine.Random.Range (0, questionList.Count);
+		} else {
+			selectedQuestion = Math.Max(PlayerPrefs.GetInt("CurrentQuestionIndex") + 1, 0) % questionList.Count; 
+		}
 		rule = questionList[selectedQuestion];
 		PlayerPrefs.SetInt ("CurrentQuestionIndex", selectedQuestion);
 

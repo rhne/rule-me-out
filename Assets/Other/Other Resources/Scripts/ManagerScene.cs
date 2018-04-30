@@ -13,6 +13,9 @@ public class ManagerScene: MonoBehaviour {
 	//	}
 	//}
 
+	[SerializeField] bool enableBackToTitle;
+	[SerializeField] bool enableExitApp;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -20,7 +23,13 @@ public class ManagerScene: MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (Input.GetKeyDown (KeyCode.Escape) && enableBackToTitle) {
+			LoadMainMenu ();
+		}
+		else if(Input.GetKeyDown (KeyCode.Escape) && enableExitApp) {
+			Application.Quit ();
+		}
+
 	}
 
 	public void LoadMainMenu() {

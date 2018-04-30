@@ -3,15 +3,10 @@ using System.Collections;
 using System;
 
 public class QuestionSet : MonoBehaviour {
+	static bool _debug = true;
 
-	// Use this for initialization
 	void Start () {
 		ChallengeGenerator ();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 
 	void ChallengeGenerator() {
@@ -28,6 +23,9 @@ public class QuestionSet : MonoBehaviour {
 	}
 
 	private static int SumOfDigit (int x) {
+		if(_debug)
+			Debug.Log ("SumOfDigit");
+
 		int sum = 0;
 		while (x != 0) {
 			sum += x % 10;
@@ -38,48 +36,70 @@ public class QuestionSet : MonoBehaviour {
 	}
 
 	public static int Sum (int a, int b) {
+		if(_debug)
+			Debug.Log ("Sum");
 		return a + b;
 	}
 
 	public static int SumOfDigit (int a, int b) {
+		if(_debug)
+			Debug.Log ("SumOfDigit");
 		return SumOfDigit(a) + SumOfDigit(b);
 	}
 
 	public static int Multiply (int a, int b ) {
+		if(_debug)
+			Debug.Log ("Multiply");
 		return a * b;
 	}
 
 	public static int AbsSubstraction (int a, int b) {
+		if(_debug)
+			Debug.Log ("AbsSubstraction");
 		return Math.Abs (a - b);
 	}
 		
 	public static int AModB (int a, int b) {
+		if(_debug)
+			Debug.Log ("AModB");
 		return a % b;
 	}
 
 	public static int BModA (int a, int b) {
+		if(_debug)
+			Debug.Log ("BModA");
 		return b % a;
 	}
 
 	public static int ModofSum (int a, int b) {
+		if(_debug)
+			Debug.Log ("ModofSum");
 		return (a + b) % 2;
 	}
 
 	public static int Largest (int a, int b) {
+		if(_debug)
+			Debug.Log ("Largest");
 		return Mathf.Max (a, b);
 	}
 
 	public static int Smallest (int a, int b) {
+		if(_debug)
+			Debug.Log ("Smallest");
 		return Mathf.Min (a, b);
 	}
 
 	public static int AIsLarger (int a, int b) {
+		if(_debug)
+			Debug.Log ("AIsLarger");
 		if (a > b)
 			return 1;
 		return 0;
 	}
 
 	public static int BIsLarger (int a, int b) {
+		if(_debug)
+			Debug.Log ("BIsLarger");
 		if (b > a)
 			return 1;
 		return 0;
