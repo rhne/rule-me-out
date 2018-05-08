@@ -22,6 +22,8 @@ public class QuestionSet : MonoBehaviour {
 		PlayerPrefs.SetInt ("ChallengeB", number);
 	}
 
+	#region EASY QUESTION
+
 	private static int SumOfDigit (int x) {
 		if(_debug)
 			Debug.Log ("SumOfDigit");
@@ -104,4 +106,22 @@ public class QuestionSet : MonoBehaviour {
 			return 1;
 		return 0;
 	}
+	#endregion
+
+	#region NORMAL QUESTION
+	/*
+	public static int SumOfExponent (int a, int b) {
+		if(_debug)
+			Debug.Log ("SumOfExponent");
+		return Math.Pow(a,2) + Math.Pow(b,2);
+	}
+
+	public static int QN2 (int a, int b) {
+		if(_debug)
+			Debug.Log ("SumOfExponent");
+		return Math.Pow(a,2) + Math.Pow(b,2);
+	}
+	*/
+	#endregion
+
 }
